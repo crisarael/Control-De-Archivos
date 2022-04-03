@@ -1,0 +1,17 @@
+C:\Users\disco\source\repos\Control_Archivo\Control_Archivo\bin\Debug\Control_Archivo.exe.config
+C:\Users\disco\source\repos\Control_Archivo\Control_Archivo\bin\Debug\Control_Archivo.exe
+C:\Users\disco\source\repos\Control_Archivo\Control_Archivo\bin\Debug\Control_Archivo.pdb
+C:\Users\disco\source\repos\Control_Archivo\Control_Archivo\obj\Debug\Control_Archivo.csprojAssemblyReference.cache
+C:\Users\disco\source\repos\Control_Archivo\Control_Archivo\obj\Debug\App.g.cs
+C:\Users\disco\source\repos\Control_Archivo\Control_Archivo\obj\Debug\Control_Archivo_MarkupCompile.cache
+C:\Users\disco\source\repos\Control_Archivo\Control_Archivo\obj\Debug\Control_Archivo_MarkupCompile.lref
+C:\Users\disco\source\repos\Control_Archivo\Control_Archivo\obj\Debug\Control_Archivo.g.resources
+C:\Users\disco\source\repos\Control_Archivo\Control_Archivo\obj\Debug\Control_Archivo.Properties.Resources.resources
+C:\Users\disco\source\repos\Control_Archivo\Control_Archivo\obj\Debug\Control_Archivo.csproj.GenerateResource.cache
+C:\Users\disco\source\repos\Control_Archivo\Control_Archivo\obj\Debug\Control_Archivo.csproj.CoreCompileInputs.cache
+C:\Users\disco\source\repos\Control_Archivo\Control_Archivo\obj\Debug\Control_Archivo.exe
+C:\Users\disco\source\repos\Control_Archivo\Control_Archivo\obj\Debug\Control_Archivo.pdb
+C:\Users\disco\source\repos\Control_Archivo\Control_Archivo\obj\Debug\Paginas\Login.g.cs
+C:\Users\disco\source\repos\Control_Archivo\Control_Archivo\obj\Debug\MainWindow.g.cs
+C:\Users\disco\source\repos\Control_Archivo\Control_Archivo\obj\Debug\Paginas\Login.baml
+C:\Users\disco\source\repos\Control_Archivo\Control_Archivo\obj\Debug\MainWindow.baml
