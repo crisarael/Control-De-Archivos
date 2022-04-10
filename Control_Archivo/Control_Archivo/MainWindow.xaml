@@ -1,0 +1,170 @@
+﻿<Window x:Class="Control_Archivo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Control_Archivo"
+        mc:Ignorable="d"
+        Title="Control Archivo" Height="720.667" Width="1153.999"
+        WindowStartupLocation="CenterScreen"
+        FontFamily="Poppins"
+        WindowState="Normal">
+    <Window.Resources>
+        <ControlTemplate x:Key="EstiloMenuButton" TargetType="{x:Type Button}">
+            <Grid/>
+        </ControlTemplate>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <Style x:Key="ButonEstilosMenu" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="#73203E"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" CornerRadius="4" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="#B4845C"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#B4845C"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="#B4845C"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#B4845C"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+
+    <Border CornerRadius="10">
+        <Grid ShowGridLines="False" Background="#9D2449">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <!-- EMPIEZA EL GRID COLUMNA IZQUIERDA -->
+
+            <Border CornerRadius="30 30 30 30" Background="#73203E">
+
+                <!-- Contenenor del grid menu -->
+                <Grid ShowGridLines="False">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="106*"></ColumnDefinition>
+                        <ColumnDefinition Width="9*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="120"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="130"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <!-- Logo -->
+                    <StackPanel Margin="0 10 0 0" Grid.Row="0" Orientation="Horizontal" Grid.ColumnSpan="2">
+                        <Image Source="/Images/expediente.png" Stretch="Fill" Width="50" Height="50" Margin="5 0 0 0" ></Image>
+                        <Label Foreground="#B4845C" Content="CONTROL DE ARCHIVO" FontWeight="Bold" FontSize="16.5" VerticalAlignment="Center" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="2,10,0,0" Height="40"></Label>
+                    </StackPanel>
+
+                    <!-- LINEA SEPARADORA -->
+                    <StackPanel  Grid.Column="0" Orientation="Vertical" Margin="0 110 0 0">
+                        <Separator HorizontalAlignment="Center" Margin="10 0 0 0" Height="2" Width="240" Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" />
+                    </StackPanel>
+
+
+                    <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
+
+                        <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
+                            <Image Source="Images/ver.png" Stretch="Fill" Width="40" Height="40" Margin="10 20 10 0"></Image>
+                            <Button x:Name="rdExpedientes" Content="Expedientes" Foreground="White" FontWeight="Bold" FontSize="24" Margin="0,20,0,0" Style="{DynamicResource ButonEstilosMenu}" Click="RdExpedientes_Click" ></Button>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
+                            <Image Source="Images/solicitar.png" Stretch="Fill" Width="40" Height="40" Margin="15 20 10 0"></Image>
+                            <Button x:Name="Solicitar" Content="Solicitar" Foreground="White" FontWeight="Bold" FontSize="24" Margin="0,20,30,0" Style="{DynamicResource ButonEstilosMenu}" Click="Solicitar_Click" ></Button>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
+                            <Image Source="Images/mis_pedidos.png" Stretch="Fill" Width="40" Height="40" Margin="10 20 10 0"></Image>
+                            <Button x:Name="rdsolicitudes" Content="Mis Solicitudes" Foreground="White" FontWeight="Bold" FontSize="24" Margin="0,20,0,0" Style="{DynamicResource ButonEstilosMenu}" Click="Rdsolicitudes_Click" ></Button>
+                        </StackPanel>
+
+                    </StackPanel>
+
+                    <!--<StackPanel Margin="20,100,-230,0" Grid.Row="2" Height="30" Width="au" Orientation="Horizontal" Background="Black" Grid.Column="1">
+                    </StackPanel>-->
+                    <!-- LINEA SEPARADORA -->
+                    <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Vertical" Margin="0 50 0 0">
+                        <Separator HorizontalAlignment="Center" Margin="10 0 0 0" Height="2" Width="240" Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" />
+                    </StackPanel>
+
+                    <!-- Seccion Salir -->
+                    <StackPanel Grid.Column="0" Grid.Row="2" Margin="10 40 0 0">
+                        <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
+                            <Image Source="Images/salir.png" Stretch="Fill" Width="40" Height="40" Margin="15 20 10 0"></Image>
+                            <Button x:Name="rdSalir" Content="Salir" Foreground="White" FontWeight="Bold" FontSize="20" Margin="0,20,0,0" Style="{DynamicResource ButonEstilosMenu}" Click="RdSalir_Click" ></Button>
+                        </StackPanel>
+                    </StackPanel>
+
+                </Grid>
+
+
+            </Border>
+            <Border Grid.Column="1" CornerRadius="10 10 10 10">
+                <Frame  x:Name="frameNavegacion" Margin="10,10,10,31" NavigationUIVisibility="Hidden"/>
+            </Border>
+
+            <StackPanel Orientation="Horizontal"  VerticalAlignment="Bottom" Margin="20 0 0 2" Height="25" Width="auto" Grid.Column="1" Grid.Row="2" Background="#9D2449">
+                <Image HorizontalAlignment="Left" Source="Images/user.png" Height="25" Width="35"></Image>
+                <TextBlock x:Name="lblNombreUsuario"  FontWeight="Bold" Foreground="#B4845C" FontSize="18" Height="19" Width="75" Margin="0,6,0,0" HorizontalAlignment="Left">Nombre de usuario</TextBlock>
+                <Image Margin="20 0 0 0" HorizontalAlignment="Left" Source="Images/librito.png" Height="25" Width="35"></Image>
+                <TextBlock x:Name="lblNombreCompleto"  FontWeight="Bold" Foreground="#B4845C" FontSize="18" Height="19" Width="242" Margin="0,6,0,0" HorizontalAlignment="Left">Nombre de usuario</TextBlock>
+                <Image Margin="0 0 0 0" HorizontalAlignment="Left" Source="Images/pc.png" Height="25" Width="35"></Image>
+                <TextBlock x:Name="lblNombrePC"  FontWeight="Bold" Foreground="#B4845C" FontSize="18" Height="19" Width="190" Margin="0,6,0,0" HorizontalAlignment="Left">Nombre de usuario</TextBlock>
+                <Image Margin="0 0 0 0" HorizontalAlignment="Left" Source="Images/ip.png" Height="25" Width="35"></Image>
+                <TextBlock x:Name="lblNombreIP"  FontWeight="Bold" Foreground="#B4845C" FontSize="18" Height="19" Width="229" Margin="0,6,0,1" HorizontalAlignment="Left">Nombre de usuario</TextBlock>
+            </StackPanel>
+
+        </Grid>
+
+
+
+    </Border>
+
+
+
+
+</Window>
